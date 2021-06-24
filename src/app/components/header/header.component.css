@@ -1,20 +1,4 @@
-@font-face{
-    font-family:"Playfair Display";
-    src: url(../../../assets/fonts/Playfair/static/PlayfairDisplay-Regular.ttf);
-}
-
-@font-face{
-    font-family:"Lato";
-    src: url(../../../assets/fonts/Lato/Lato-Regular.ttf);
-}
-
-.playfair{
-    font-family: "Playfair Display";
-}
-
-.lato {
-    font-family: "Lato;"
-}
+@import url(../../app.component.css);
 
 .header{
     height:100px;
@@ -22,7 +6,7 @@
 }
 
 .image{
-    margin-left:15vw;
+    margin-left:40%;
     position: inline;
     float:left;
     height: 100px;
@@ -33,6 +17,7 @@
 .login, .register{
     position: inline;
     float:right;
+    margin-top:1vw;
     margin-right:2vw;
 }
 

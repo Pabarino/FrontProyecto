@@ -1,0 +1,17 @@
+export * from './auth.service';
+import { AuthService } from './auth.service';
+export * from './genero.service';
+import { GeneroService } from './genero.service';
+export * from './interes.service';
+import { InteresService } from './interes.service';
+export * from './juego.service';
+import { JuegoService } from './juego.service';
+export * from './juegosGenero.service';
+import { JuegosGeneroService } from './juegosGenero.service';
+export * from './juegosPlataforma.service';
+import { JuegosPlataformaService } from './juegosPlataforma.service';
+export * from './plataforma.service';
+import { PlataformaService } from './plataforma.service';
+export * from './usuario.service';
+import { UsuarioService } from './usuario.service';
+export const APIS = [AuthService, GeneroService, InteresService, JuegoService, JuegosGeneroService, JuegosPlataformaService, PlataformaService, UsuarioService];

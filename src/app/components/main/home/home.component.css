@@ -1,3 +1,5 @@
+@import url(../../../app.component.css);
+
 .intro {
     background-image: url('../../../../assets/images/intro.png');
     width: 100%;
