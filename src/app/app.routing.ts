@@ -16,12 +16,14 @@ import { RegisterComponent } from './components/main/register/register.component
 import {UserGuard} from './api/user.guard';
 
 const appRoutes = [
-  { path: "", component: BodyComponent},
-  { path: "login", component: LoginComponent, pathMatch: "full" },
-  { path: "", component: HomeComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'profile', component: ProfileComponent, canActivate:[UserGuard]},
-  { path: 'games', component: GamesComponent},
-  { path: 'aboutus', component: AboutusComponent},
+  { path: "", component: BodyComponent,
+    children: [
+      { path: "login", component: LoginComponent, pathMatch: "full" },
+      { path: "", component: HomeComponent},
+      { path: 'register', component: RegisterComponent},
+      { path: 'profile', component: ProfileComponent, canActivate:[UserGuard]},
+      { path: 'games', component: GamesComponent},
+      { path: 'aboutus', component: AboutusComponent},
+    ]},
 ];
 export const routing = RouterModule.forRoot(appRoutes);

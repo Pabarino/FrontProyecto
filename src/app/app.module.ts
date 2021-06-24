@@ -33,14 +33,6 @@ import { UsuarioService } from './api/usuario.service';
 import {UserGuard} from './api/user.guard';
 
 @NgModule({
-  imports:      [
-    BrowserModule,
-    HttpClientModule,
-    routing,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule
-  ],
   declarations: [
       AppComponent,
       FooterComponent,
@@ -54,6 +46,14 @@ import {UserGuard} from './api/user.guard';
       ProfileComponent,
       RegisterComponent
   ],
+  imports:      [
+    BrowserModule,
+    HttpClientModule,
+    routing,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
+  ],
   exports:      [],
   providers: [
     AuthService,
@@ -64,24 +64,26 @@ import {UserGuard} from './api/user.guard';
     JuegosPlataformaService,
     PlataformaService,
     UsuarioService,
-    UserGuard ]
+    UserGuard 
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
-    public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders<any> {
-        return {
-            ngModule: AppModule,
-            providers: [ { provide: Configuration, useFactory: configurationFactory } ]
-        };
-    }
+    // public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders<any> {
+    //     return {
+    //         ngModule: AppModule,
+    //         providers: [ { provide: Configuration, useFactory: configurationFactory } ]
+    //     };
+    // }
 
-    constructor( @Optional() @SkipSelf() parentModule: AppModule,
-                 @Optional() http: HttpClient) {
-        if (parentModule) {
-            throw new Error('ApiModule is already loaded. Import in your base AppModule only.');
-        }
-        if (!http) {
-            throw new Error('You need to import the HttpClientModule in your AppModule! \n' +
-            'See also https://github.com/angular/angular/issues/20575');
-        }
-    }
+    // constructor( @Optional() @SkipSelf() parentModule: AppModule,
+    //              @Optional() http: HttpClient) {
+    //     if (parentModule) {
+    //         throw new Error('ApiModule is already loaded. Import in your base AppModule only.');
+    //     }
+    //     if (!http) {
+    //         throw new Error('You need to import the HttpClientModule in your AppModule! \n' +
+    //         'See also https://github.com/angular/angular/issues/20575');
+    //     }
+    // }
 }

@@ -1,1 +1,35 @@
-<p>login works!</p>
+
+<div class="login">
+    <h4 type="text">Iniciar Sesión</h4>
+    <hr>
+    <form class="custom-form" [formGroup]="profileForm" method="ng-controller= validateCtrl">      
+      <input
+        name="email"
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        required="required"
+      />
+      <!-- <div *ngIf="(profileForm.get('email').invalid && profileForm.get('email').touched) || profileForm.get('email').dirty || error == 1">
+        <small *ngIf="profileForm.get('email').errors?.required" class="text-danger">Email requerido. </small> -->
+        <!--question mark(?) is a safe navigation operator-->
+        <!-- <small *ngIf="profileForm.get('email').errors?.pattern" class="text-danger">Porfavor, provee un email valido. </small> -->
+      <!-- </div> -->
+      <input
+        name="password"
+        placeholder="Password"
+        type="password"
+        formControlName="password"
+        class="form-control"
+        required="required"
+      />
+      <!-- <div *ngIf="(profileForm.get('password').invalid && profileForm.get('password').touched) || profileForm.get('password').dirty || error == 1">
+        <small *ngIf="profileForm.get('password').errors?.required" class="text-danger">Contraseña requerida. </small>
+      </div>
+      <div *ngIf="error == 1" class="text-danger">Combinacion email/contraseña es invalida.</div> -->
+      <button type="submit" (click)="onSubmit()">Iniciar Sesion</button>
+      <p (click)="onRecoverPass()">Te olvidaste la contraseña?</p>
+      <p (click)="onRecoverEmail()">Te olvidaste el email?</p>
+      <button [routerLink]="['/reset-pass']" class="btn">Registrarse</button>
+    </form>
+  </div>

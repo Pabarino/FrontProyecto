@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  onGames(){
+    this.router.navigate(['./games']);
+  };
+
+  onAboutus(){
+    this.router.navigate(['./aboutus']);
   }
 
 }

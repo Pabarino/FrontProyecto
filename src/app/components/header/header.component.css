@@ -14,10 +14,22 @@
     object-fit: cover;
 }
 
+.image:hover{
+    cursor: pointer;
+}
+
 .login, .register{
     position: inline;
     float:right;
     margin-top:1vw;
     margin-right:2vw;
+}
+
+.login:hover{
+    cursor: pointer;
+}
+
+.register:hover{
+    cursor: pointer;
 }
 

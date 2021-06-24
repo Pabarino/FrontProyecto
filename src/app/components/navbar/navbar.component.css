@@ -16,6 +16,7 @@
 
 .topnav a:hover{
     background-color: rgb(34, 34, 34);
+    cursor: pointer;
 }
 
 .form-control{
